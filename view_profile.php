@@ -14,28 +14,33 @@ echo $search_acc_type_SQL;
 		<meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 		<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<meta charset utf="8">
-		<link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+		
+        <!--default-js-->
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <!--fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+        <!--bootstrap-->
+         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <!--coustom css-->
+        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <!--shop-kart-js-->
+        <script src="js/simpleCart.min.js"></script>    
+        <!--bootstrap-js-->
+        <script src="js/bootstrap.min.js"></script>
+        <!--script-->
+         <!-- FlexSlider -->
+        <script src="js/imagezoom.js"></script>
+        <script defer src="js/jquery.flexslider.js"></script>
+        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+        <!--by yuyu-->
+        <script src="js/view_profile.js"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
-		<!--fonts-->
-		<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-		<!--bootstrap-->
-			 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-		<!--coustom css-->
-			<link href="css/style.css" rel="stylesheet" type="text/css"/>
-        <!--shop-kart-js-->
-        <script src="js/simpleCart.min.js"></script>
-		<!--default-js-->
-			<script src="js/jquery-2.1.4.min.js"></script>
-		<!--bootstrap-js-->
-			<script src="js/bootstrap.min.js"></script>
-		<!--script-->
-         <!-- FlexSlider -->
-            <script src="js/imagezoom.js"></script>
-              <script defer src="js/jquery.flexslider.js"></script>
-            <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+		
 
-            <script>
+            <!--script>
             // Can also be used with $(document).ready()
                 $(window).load(function() {
                   $('.flexslider').flexslider({
@@ -64,7 +69,7 @@ echo $search_acc_type_SQL;
                         };
                     });
                 });
-            </script>
+            </script-->
         <!-- //FlexSlider-->
     </head>
     <body>

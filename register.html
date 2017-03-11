@@ -8,27 +8,38 @@
 		<meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 		<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<meta charset utf="8">
-		<!--fonts-->
-		<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+        <!--by yuyu-->
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
 
 		<!--fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 		<!--bootstrap-->
-			 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<!--coustom css-->
-			<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
         <!--shop-kart-js-->
         <script src="js/simpleCart.min.js"></script>
 		<!--default-js-->
-			<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
 		<!--bootstrap-js-->
-			<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 		<!--script-->
          <!-- FlexSlider -->
-            <script src="js/imagezoom.js"></script>
-              <script defer src="js/jquery.flexslider.js"></script>
-            <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+        <script src="js/imagezoom.js"></script>
+        <script defer src="js/jquery.flexslider.js"></script>
+        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 
-            <script>
+        <!--by yuyu-->
+        <script src="js/register.js"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+
+
+            <!--script>
             // Can also be used with $(document).ready()
             $(window).load(function() {
               $('.flexslider').flexslider({
@@ -36,7 +47,7 @@
                 controlNav: "thumbnails"
               });
             });
-            </script>
+            </script-->
         <!-- //FlexSlider-->
     </head>
     <body>
@@ -177,36 +188,45 @@
 			<div class="reg">
 				<h3>Register Acount</h3>
 				 <form>
+                    <ul>
+                        <li class="text-info">Username: </li>
+                        <li><input type="text" id="username"></li>
+                    </ul>
+                    <ul>
+                        <li class="text-info">Password: </li>
+                        <li><input type="password" id="password"></li>
+                    </ul>
+                    <ul>
+                        <li class="text-info">Re-enter Password:</li>
+                        <li><input type="password" id="re_password"></li>
+                    </ul>
 					<ul>
 						<li class="text-info">First Name: </li>
-						<li><input type="text" value=""></li>
+						<li><input type="text" id="f_name"></li>
 					</ul>
 					<ul>
 						<li class="text-info">Last Name: </li>
-						<li><input type="text" value=""></li>
+						<li><input type="text" id="l_name"></li>
 					 </ul>
-					 <ul>
- 						<li class="text-info">Username: </li>
- 						<li><input type="text" value=""></li>
- 					</ul>
+                     <ul>
+                        <li class="text-info">Sex: </li>
+                        <li><input type="radio" class="sex" name="sex" id ="sex" value="M">M &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="sex" name="sex" id="sex" value="F">F &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sex" class="sex" name="sex" value="O" checked>Other</li>
+                    </ul>
 					<ul>
 						<li class="text-info">Email: </li>
-						<li><input type="text" value=""></li>
-					</ul>
-					<ul>
-						<li class="text-info">Password: </li>
-						<li><input type="password" value=""></li>
-					</ul>
-					<ul>
-						<li class="text-info">Re-enter Password:</li>
-						<li><input type="password" value=""></li>
+						<li><input type="text" id="email"></li>
 					</ul>
 					<ul>
 						<li class="text-info">Mobile Number:</li>
-						<li><input type="text" value=""></li>
+						<li><input type="text" id="phone"></li>
 					</ul>
-					<input type="submit" value="Register Now">
-					<p class="click">By clicking this button, you are agree to my  <a href="#">Policy Terms and Conditions.</a></p>
+					<!--input type="submit" value="Register Now"-->
+                    <p class="click"><br /><input type="checkbox" id="check_policy"> By clicking this button, you are agree to my  <a href="https://www.theaa.com/resources/Documents/pdf/insurance/aa_life_insurance_terms_conditions_Mar_2016.pdf" target="_blank">Policy Terms and Conditions.</a></p>
+                    <div class="col-md-6 login-right">
+                        <br />
+                        <a class="button" id="add_account">Register</a>
+                        <br />
+                    </div>
 				</form>
 			</div>
 		</div>
