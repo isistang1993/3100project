@@ -1,4 +1,10 @@
-
+<?php
+require_once('../Connections/conn.php'); 
+$search_acc_type_SQL =  'SELECT type ' .
+                        'FROM account ' .
+                        'WHERE acc_id = 1';
+echo $search_acc_type_SQL;
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,14 +19,6 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
 		<!--fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-
-        <!--by yu-->
-        <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script-->
-        <!--script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script-->
-        <!--script src="js/view_profile.js"></script-->
-
-		<!--fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 		<!--bootstrap-->
 			 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<!--coustom css-->
