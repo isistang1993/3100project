@@ -41,6 +41,9 @@ switch($type){
 				$SQL .= "VALUES ($acc_id, '$phone', '$email', '$d_type', '$f_name', '$l_name')";
 				break;
 }
-//echo "$SQL";
 $db_con->query($SQL) or die(mysql_error());
+
+//Step 4: add session
+$_SESSION['username'] = $username;
+$_SESSION['type'] = $type;
 ?>

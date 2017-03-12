@@ -1,4 +1,7 @@
-
+<?php
+require_once('../Connections/conn.php'); 
+echo "index.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,10 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+        <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <meta charset utf="8">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
         <!--fonts-->
         <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 
@@ -25,13 +29,6 @@
         <!--bootstrap-js-->
             <script src="js/bootstrap.min.js"></script>
         <!--script-->
-
-        <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-            $(window).load(function() {
-                window.location.replace("index.php");
-            });
-        </script>
-
     </head>
     <body>
         <div class="header">
@@ -56,7 +53,6 @@
                     </div>
         <div class="clearfix"></div>
                 </div>
-                <!---menu-----bar--->
                 <div class="header-botom">
                     <div class="content white">
                     <nav class="navbar navbar-default nav-menu" role="navigation">
@@ -73,11 +69,10 @@
                                             <div class="container">
                                                 <form>
                                                 <input type="text" class="sub-email" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Item ...';}">
-                                                <a class="btn btn-default subs-btn" href="#" role="button">Search</a>
+                                                <a class="btn btn-default subs-btn" href="products.html" role="button">Search</a>
                                                 </form>
                                             </div>
                                         </div>
-                        <!--/.navbar-header-->
 
                         <div class="collapse navbar-collapse collapse-pdng" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav nav-font">
