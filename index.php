@@ -1,5 +1,5 @@
 <?php
-require_once('../Connections/conn.php'); 
+require_once('../Connections/conn.php');
 echo "index.php ";
 session_start();
 if(isset($_SESSION['username']))
@@ -19,7 +19,7 @@ else
 
         <!--fonts-->
         <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-
+				<!--imkjai-->
         <!--fonts-->
         <!--bootstrap-->
              <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
