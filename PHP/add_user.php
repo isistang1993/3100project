@@ -44,6 +44,12 @@ switch($type){
 $db_con->query($SQL) or die(mysql_error());
 
 //Step 4: add session
+session_start();
 $_SESSION['username'] = $username;
 $_SESSION['type'] = $type;
+
+if(isset($_SESSION['username']))
+    echo "<b>isset</b>";
+else
+    echo "<b>empty</b>";
 ?>

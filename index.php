@@ -1,6 +1,11 @@
 <?php
 require_once('../Connections/conn.php'); 
-echo "index.php";
+echo "index.php ";
+session_start();
+if(isset($_SESSION['username']))
+    echo "<b>isset</b>";
+else
+    echo "<b>empty</b>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,9 +16,7 @@ echo "index.php";
         <meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
         <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <meta charset utf="8">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+
         <!--fonts-->
         <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 
@@ -29,6 +32,11 @@ echo "index.php";
         <!--bootstrap-js-->
             <script src="js/bootstrap.min.js"></script>
         <!--script-->
+
+        <!--By KJai-->
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
     </head>
     <body>
         <div class="header">
