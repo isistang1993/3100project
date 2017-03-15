@@ -2,33 +2,44 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <title> 114SHOES | CSCI3100 Group 16 </title>
+  	<title> 114SHOES | CSCI3100 Group 16 </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 		<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<meta charset utf="8">
-		<!--fonts-->
-		<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+        <!--by yuyu-->
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
 
 		<!--fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 		<!--bootstrap-->
-			 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 		<!--coustom css-->
-			<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
         <!--shop-kart-js-->
         <script src="js/simpleCart.min.js"></script>
 		<!--default-js-->
-			<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery-2.1.4.min.js"></script>
 		<!--bootstrap-js-->
-			<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 		<!--script-->
          <!-- FlexSlider -->
-            <script src="js/imagezoom.js"></script>
-              <script defer src="js/jquery.flexslider.js"></script>
-            <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+        <script src="js/imagezoom.js"></script>
+        <script defer src="js/jquery.flexslider.js"></script>
+        <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 
-            <script>
+        <!--by yuyu-->
+        <script src="js/register.js"></script>
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+
+
+            <!--script>
             // Can also be used with $(document).ready()
             $(window).load(function() {
               $('.flexslider').flexslider({
@@ -36,7 +47,7 @@
                 controlNav: "thumbnails"
               });
             });
-            </script>
+            </script-->
         <!-- //FlexSlider-->
     </head>
     <body>
@@ -47,7 +58,7 @@
                         <a href="index.html">114SHOES</a>
                     </div>
                     <div class="login-bars">
-                        <a class="btn btn-default log-bar" href="register.php" role="button">Sign up</a>
+                        <a class="btn btn-default log-bar" href="register.html" role="button">Sign up</a>
                         <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
                         <div class="cart box_1">
                             <a href="checkout.html">
@@ -165,43 +176,61 @@
         <div class="head-bread">
             <div class="container">
                 <ol class="breadcrumb">
-                    <li><a href="index.html">HOME</a></li>
-                    <li class="active">LOGIN</li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="register.html">LOGIN</a></li>
+                    <li class="active">REGISTER</li>
                 </ol>
             </div>
         </div>
-        <!--signup-->
-        <!-- login-page -->
-        <div class="login">
-            <div class="container">
-                <div class="login-grids">
-                    <div class="col-md-6 log">
-                             <h3>Login</h3>
-                             <div class="strip"></div>
-                             <p>Welcome, please enter the following to continue.</p>
-                             <p>If you have previously Login with us, <a href="#">Click Here</a></p>
-                             <form>
-                                 <h5>User Name:</h5>
-                                 <input type="text" value="">
-                                 <h5>Password:</h5>
-                                 <input type="password" value=""><br>
-                                 <input type="submit" value="Login">
-
-                             </form>
-                            <a href="#">Forgot Password ?</a>
-                    </div>
+        <!-- reg-form -->
+	<div class="reg-form">
+		<div class="container">
+			<div class="reg">
+				<h3>Register Acount</h3>
+				 <form>
+                    <ul>
+                        <li class="text-info">Username: </li>
+                        <li><input type="text" id="username"></li>
+                    </ul>
+                    <ul>
+                        <li class="text-info">Password: </li>
+                        <li><input type="password" id="password"></li>
+                    </ul>
+                    <ul>
+                        <li class="text-info">Re-enter Password:</li>
+                        <li><input type="password" id="re_password"></li>
+                    </ul>
+					<ul>
+						<li class="text-info">First Name: </li>
+						<li><input type="text" id="f_name"></li>
+					</ul>
+					<ul>
+						<li class="text-info">Last Name: </li>
+						<li><input type="text" id="l_name"></li>
+					 </ul>
+                     <ul>
+                        <li class="text-info">Sex: </li>
+                        <li><input type="radio" class="sex" name="sex" id ="sex" value="M">M &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="sex" name="sex" id="sex" value="F">F &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sex" class="sex" name="sex" value="O" checked>Other</li>
+                    </ul>
+					<ul>
+						<li class="text-info">Email: </li>
+						<li><input type="text" id="email"></li>
+					</ul>
+					<ul>
+						<li class="text-info">Mobile Number:</li>
+						<li><input type="text" id="phone"></li>
+					</ul>
+					<!--input type="submit" value="Register Now"-->
+                    <p class="click"><br /><input type="checkbox" id="check_policy"> By clicking this button, you are agree to my  <a href="https://www.theaa.com/resources/Documents/pdf/insurance/aa_life_insurance_terms_conditions_Mar_2016.pdf" target="_blank">Policy Terms and Conditions.</a></p>
                     <div class="col-md-6 login-right">
-                            <h3>New Registration</h3>
-                            <div class="strip"></div>
-                            <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-                            <a href="register.html" class="button">Create An Account</a>
+                        <br />
+                        <a class="button" id="add_account">Register</a>
+                        <br />
                     </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-<!-- //login-page -->
-        <!--signup-->
+				</form>
+			</div>
+		</div>
+	</div>
         <div class="footer-grid">
             <div class="container">
                 <div class="col-md-2 re-ft-grd">

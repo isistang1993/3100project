@@ -2,6 +2,7 @@
 //http://stackoverflow.com/questions/34579099/fatal-error-uncaught-error-call-to-undefined-function-mysql-connect
 
 require_once('../Connections/conn.php'); 
+session_start();
 
 $username=$_POST['username'];
 $password=$_POST['password'];
@@ -16,6 +17,9 @@ $d_type = 'parttime';	//temp for driver
 $acc_id = 0;			//by default
 
 //Step 1: create account data
+//if(isset(['type']) && ($_SESSION['type']=='O'){
+//
+//}
 $SQL =	"INSERT INTO account (username, password, type) " .
  		"VALUES ('$username','$password','$type');";
 $db_con->query($SQL) or die(mysql_error());
@@ -36,6 +40,7 @@ switch($type){
 				break;
 	case "O":	$SQL =	"INSERT INTO officer_account (acc_id, email, type, f_name, l_name) ";
 				$SQL .= "VALUES ($acc_id, '$email', '$o_type', '$f_name', '$l_name') ";
+				$_SESSION['type'] = $o_type;
 				break;
 	case "D":	$SQL =	"INSERT INTO driver_account (acc_id, phone, email, work_type, f_name, l_name) ";
 				$SQL .= "VALUES ($acc_id, '$phone', '$email', '$d_type', '$f_name', '$l_name')";
@@ -44,7 +49,6 @@ switch($type){
 $db_con->query($SQL) or die(mysql_error());
 
 //Step 4: add session
-session_start();
 $_SESSION['username'] = $username;
 $_SESSION['type'] = $type;
 

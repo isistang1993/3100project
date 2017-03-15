@@ -80,7 +80,7 @@ echo $search_acc_type_SQL;
                         <a href="index.html">114SHOES</a>
                     </div>
                     <div class="login-bars">
-                        <a class="btn btn-default log-bar" href="register.html" role="button">Sign up</a>
+                        <a class="btn btn-default log-bar" href="register.php" role="button">Sign up</a>
                         <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
                         <div class="cart box_1">
                             <a href="checkout.html">
