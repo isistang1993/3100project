@@ -35,39 +35,7 @@ session_start();
         <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
-		
 
-            <!--script>
-            // Can also be used with $(document).ready()
-                $(window).load(function() {
-                  $('.flexslider').flexslider({
-                    animation: "slide",
-                    controlNav: "thumbnails"
-                  });
-                });
-                $(window).ready(function(){
-                    $("#update_account").click(function(){
-                        var xmlhttp = new XMLHttpRequest();
-                        var str = "username='" + $("#username").val()+"'";
-                        //console.log(str);
-
-                        xmlhttp.open("POST", "PHP/update_user.php", true);
-                        xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-                        xmlhttp.send(str);
-                        xmlhttp.onreadystatechange = function() {
-                            if(xmlhttp.readyState === 4 && xmlhttp.status==200){
-                                console.log(xmlhttp.responseText);
-                                console.log("Updated");
-                                alert("Updated Successed");
-                            }else{
-                                console.log("Wrong path");
-                                alert("Updated Failed");
-                            }
-                        };
-                    });
-                });
-            </script-->
-        <!-- //FlexSlider-->
     </head>
     <body>
         <div class="header">
@@ -77,21 +45,22 @@ session_start();
                         <a href="index.html">114SHOES</a>
                     </div>
                     <div class="login-bars">
-                        <?php                      
-                            /*if(isset($_SESSION['username'])){
-                                echo "<a class='btn btn-default log-bar' id='view_profile' role='button'>$_SESSION['username']</a>";
-                                echo "<a class='btn btn-default log-bar' id='logout' role='button'>Logout</a>";
+                        <?php 
+                            if(isset($_SESSION['type'])){
                                 switch($_SESSION['type']){
-                                    case "nor": 
+                                    case "nor":
                                     case "sup":
-                                        echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a>" 
-                                        break;
+                                    echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> "; 
+                                    break;
                                 }
+                                echo "<a class='btn btn-default log-bar' href='view_profile.php' role='button'>$_SESSION[username]</a> ";
+                                echo "<a class='btn btn-default log-bar' id='logout' role='button'>Logout</a>";
                             }else{
-                                echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a>";
+                                echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
                                 echo "<a class='btn btn-default log-bar' href='signup.html' role='button'>Login</a>";
-                            }*/
+                            }
                         ?>
+
                         <div class="cart box_1">
                             <a href="checkout.html">
                             <h3>
