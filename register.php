@@ -200,7 +200,17 @@
                         <li class="text-info">Re-enter Password:</li>
                         <li><input type="password" id="re_password"></li>
                     </ul>
-					<ul>
+                    <?php 
+                        if(isset($_SESSION['type'])&&($_SESSION['type']=="sup"||$_SESSION['type']=="nor"))
+                        {    
+                            echo "<ul>";
+                        }else
+                            echo "<ul hidden>";
+                    ?>
+                    <li class="text-info">Type:</li>
+                        <li><input type="radio" class="job_type" name="job_type" id ="job_type" value="U" checked>User &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="job_type" name="job_type" id="job_type" value="PT">Driver-Part Time &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="job_type" class="job_type" name="job_type" value="FT">Driver-Full Time &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="job_type" class="job_type" name="job_type" value="nor">Officer-NOR &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="job_type" class="job_type" name="job_type" value="sup">Officer-SUP</li>                
+                    </ul>
+                    <ul>
 						<li class="text-info">First Name: </li>
 						<li><input type="text" id="f_name"></li>
 					</ul>

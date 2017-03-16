@@ -1,9 +1,6 @@
 <?php
-require_once('../Connections/conn.php'); 
-$search_acc_type_SQL =  'SELECT type ' .
-                        'FROM account ' .
-                        'WHERE acc_id = 1';
-echo $search_acc_type_SQL;
+require_once('../Connections/conn.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,8 +77,21 @@ echo $search_acc_type_SQL;
                         <a href="index.html">114SHOES</a>
                     </div>
                     <div class="login-bars">
-                        <a class="btn btn-default log-bar" href="register.php" role="button">Sign up</a>
-                        <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
+                        <?php                      
+                            /*if(isset($_SESSION['username'])){
+                                echo "<a class='btn btn-default log-bar' id='view_profile' role='button'>$_SESSION['username']</a>";
+                                echo "<a class='btn btn-default log-bar' id='logout' role='button'>Logout</a>";
+                                switch($_SESSION['type']){
+                                    case "nor": 
+                                    case "sup":
+                                        echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a>" 
+                                        break;
+                                }
+                            }else{
+                                echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a>";
+                                echo "<a class='btn btn-default log-bar' href='signup.html' role='button'>Login</a>";
+                            }*/
+                        ?>
                         <div class="cart box_1">
                             <a href="checkout.html">
                             <h3>
