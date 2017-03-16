@@ -1,6 +1,8 @@
 <?php
 require_once('../Connections/conn.php');
 session_start();
+if(isset($_SESSION['username']))
+    echo "<b>$_SESSION[username] $_SESSION[type] isset</b>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +13,10 @@ session_start();
 		<meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 		<script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<meta charset utf="8">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+
 		
         <!--default-js-->
         <script src="js/jquery-2.1.4.min.js"></script>
@@ -191,21 +197,30 @@ session_start();
 				 <form>
 					 <ul>
  						<li class="text-info">Username: </li>
- 						<li >isistang1234<input type="hidden" id="username" value="isistang1234"></li>
+ 						<li><?php echo"$_SESSION[username]"; ?><input type="hidden" id="username" value=<?php echo"$_SESSION[username]"; ?>></li>
  					</ul>
 					<ul>
 						<li class="text-info">First Name: </li>
-						<li><input type="text" id="f_name" value="Isis"></li>
+						<li><input type="text" id="f_name" value="" ></li>
 					</ul>
 					<ul>
 						<li class="text-info">Last Name: </li>
 						<li><input type="text" id="l_name" value="Tang"></li>
 					 </ul>
-					 <ul>
+                    <?php if(isset($_SESSION['type'])&&($_SESSION['type']=="U")){echo "<ul>";}else{echo "<ul hidden>";}; ?>
  						<li class="text-info">Sex: </li>
- 						<li><input type="radio" name="sex" value="M">M &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" id="sex" value="F" checked >F &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sex" name="sex" value="Other">Other</li>
+ 						<li><input type="radio" name="sex" id="sex" value="M">M &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" id="sex" value="F">F &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sex" name="sex" value="Other" checked>Other</li>
  					</ul>
-                    <ul>
+                    <?php if(isset($_SESSION['type'])&&($_SESSION['type']=="sup"||$_SESSION['type']=="nor")){echo "<ul>";}else{echo "<ul hidden>";}; ?>
+                        <li class="text-info">Job Type: </li>
+                        <li><input type="radio" name="job_type" id="job_type" value="sup">SUP &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="job_type" id="job_type" value="nor">NOR</li>
+                    </ul>
+                    <?php if(isset($_SESSION['type'])&&($_SESSION['type']=="PT"||$_SESSION['type']=="FT")){echo "<ul>";}else{echo "<ul hidden>";}; ?>
+                        <li class="text-info">Sex: </li>
+                        <li><input type="radio" name="work_type" id="work_type" value="FT">Full Time &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="work_type" id="work_type" value="PT">Part Time</li>
+                    </ul>
+
+                    <?php if(isset($_SESSION['type'])&&($_SESSION['type']=="sup"||$_SESSION['type']=="nor")){echo "<ul hidden>";}else{echo "<ul>";}; ?>
                         <li class="text-info">Mobile Number:</li>
                         <li><input type="text" id="phone" value="62742899"></li>
                     </ul>

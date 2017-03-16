@@ -1,8 +1,9 @@
 <?php
 require_once('../Connections/conn.php'); 
+session_start();
 
 $SQL = "";
-if(isset($_SESSION['username']){
+if(isset($_SESSION['username'])){
 	//User profile
 	$acc_id = "";
 	$f_name = "";
@@ -13,39 +14,42 @@ if(isset($_SESSION['username']){
 	
 	$SQL = 	"SELECT acc_id " .
 			"FROM account " .
-			"WHERE username = $_SESSION[username]";
-
-	$db_con->query($SQL) or die(mysql_error());
+			"WHERE username = '$_SESSION[username]'";
+	//echo "$SQL";
+	$result = $db_con->query($SQL) or die("Error");
 	$row = $result->fetch_assoc();
 	$acc_id = html_entity_decode(htmlentities($row['acc_id']));
+	$result->free();
 
 	switch($_SESSION['type']){
 		case 'U':
-			$SQL =	"SELECT f_name, l_name, sex, phone, email" .
-					"FROM user" .
+			$SQL =	"SELECT f_name, l_name, sex, phone, email " .
+					"FROM user_account " .
 					"WHERE acc_id = $acc_id";
-			$db_con->query($SQL) or die(mysql_error());
-			$row = $result->fetch_assoc();
-			$f_name = html_entity_decode(htmlentities($row['f_name']));
-			$l_name = html_entity_decode(htmlentities($row['l_name']));
-			$sex = html_entity_decode(htmlentities($row['sex']));
-			$phone = html_entity_decode(htmlentities($row['phone']));
-			$email = html_entity_decode(htmlentities($row['email']));
 			break;
-
 		case 'nor':
 		case 'sup':
-			
+			$SQL =	"SELECT f_name, l_name, type, email " .
+					"FROM officer_account " .
+					"WHERE acc_id = $acc_id";
 			break;
-		
 		case 'FT':
 		case 'PT':
+			$SQL =	"SELECT f_name, l_name, work_type, email, phone " .
+					"FROM driver_account " .
+					"WHERE acc_id = $acc_id";
 			break;
 	}
-
-	$SQL = 'SELECT ';
+	
+	//echo "$SQL ";
+	$result = $db_con->query($SQL) or die("Error");
+	$row = $result->fetch_assoc();
+	$rows = array();
+	do{
+		$rows[] = $row;
+	}while ($row = $result->fetch_assoc());
+	echo json_encode($rows);
 }else{
 	//Check login
-	session_start();
 }
 ?>

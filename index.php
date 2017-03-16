@@ -4,8 +4,8 @@ session_start();
 if(isset($_SESSION['username']))
     echo "<b>$_SESSION[username] $_SESSION[type] isset</b>";
 else{
-    $_SESSION['username'] = 'isis1234';
-    $_SESSION['type'] = 'sup';
+    $_SESSION['username'] = 'honglo';
+    $_SESSION['type'] = 'FT';
     echo "<b>empty</b>";
 }
 ?>

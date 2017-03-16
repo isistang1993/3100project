@@ -22,7 +22,7 @@ $acc_id = 0;			//by default
 //}
 $SQL =	"INSERT INTO account (username, password, type) " .
  		"VALUES ('$username','$password','$type');";
-$db_con->query($SQL) or die(mysql_error());
+$db_con->query($SQL) or die("Error");
 
 //Step 2: get new account id
 $SQL =	"SELECT acc_id " .
