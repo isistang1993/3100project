@@ -38,15 +38,17 @@ switch($type){
 	case "U":	$SQL =	"INSERT INTO user_account (acc_id, phone, email, sex, f_name, l_name) ";
 				$SQL .= "VALUES ($acc_id, '$phone', '$email', '$sex', '$f_name', '$l_name')";
 				break;
-	case "O":	$SQL =	"INSERT INTO officer_account (acc_id, email, type, f_name, l_name) ";
+	case "sup":	
+	case "nor":	$SQL =	"INSERT INTO officer_account (acc_id, email, type, f_name, l_name) ";
 				$SQL .= "VALUES ($acc_id, '$email', '$o_type', '$f_name', '$l_name') ";
 				$_SESSION['type'] = $o_type;
 				break;
-	case "D":	$SQL =	"INSERT INTO driver_account (acc_id, phone, email, work_type, f_name, l_name) ";
+	case "FT":
+	case "PT":	$SQL =	"INSERT INTO driver_account (acc_id, phone, email, work_type, f_name, l_name) ";
 				$SQL .= "VALUES ($acc_id, '$phone', '$email', '$d_type', '$f_name', '$l_name')";
 				break;
 }
-$db_con->query($SQL) or die(mysql_error());
+$db_con->query($SQL) or die("Error");
 
 //Step 4: add session
 $_SESSION['username'] = $username;

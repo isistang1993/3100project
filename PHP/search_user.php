@@ -3,7 +3,7 @@ require_once('../Connections/conn.php');
 session_start();
 
 $SQL = "";
-if(isset($_SESSION['username'])){
+if($_POST['task']=="profile"){
 	//User profile
 	$acc_id = "";
 	$f_name = "";
@@ -49,7 +49,20 @@ if(isset($_SESSION['username'])){
 		$rows[] = $row;
 	}while ($row = $result->fetch_assoc());
 	echo json_encode($rows);
-}else{
-	//Check login
+}else if($_POST['task']=="verify"){
+	//Verify account
+	$SQL =	"SELECT 1 as confirm " .
+			"FROM account " .
+			"WHERE username = '" . $_POST['username'] . "' ".
+			"AND password = '" . $_POST['password'] . "'";
+	//echo $SQL;
+	$result = $db_con->query($SQL) or die("Error");
+	$row_cnt = $result->num_rows;
+
+	if($row_cnt == 1){
+		echo "Verified";
+	}else{
+		echo "Unverified";
+	}
 }
 ?>

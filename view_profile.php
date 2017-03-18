@@ -1,8 +1,8 @@
 <?php
 require_once('../Connections/conn.php');
 session_start();
-if(isset($_SESSION['username']))
-    echo "<b>$_SESSION[username] $_SESSION[type] isset</b>";
+//if(isset($_SESSION['username']))
+//    echo "<b>$_SESSION[username] $_SESSION[type] isset</b>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,9 +38,6 @@ if(isset($_SESSION['username']))
 
         <!--by yuyu-->
         <script src="js/view_profile.js"></script>
-        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
 
     </head>
     <body>
@@ -201,11 +198,11 @@ if(isset($_SESSION['username']))
  					</ul>
 					<ul>
 						<li class="text-info">First Name: </li>
-						<li><input type="text" id="f_name" value="" ></li>
+						<li><input type="text" id="f_name" ></li>
 					</ul>
 					<ul>
 						<li class="text-info">Last Name: </li>
-						<li><input type="text" id="l_name" value="Tang"></li>
+						<li><input type="text" id="l_name"></li>
 					 </ul>
                     <?php if(isset($_SESSION['type'])&&($_SESSION['type']=="U")){echo "<ul>";}else{echo "<ul hidden>";}; ?>
  						<li class="text-info">Sex: </li>
@@ -216,17 +213,17 @@ if(isset($_SESSION['username']))
                         <li><input type="radio" name="job_type" id="job_type" value="sup">SUP &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="job_type" id="job_type" value="nor">NOR</li>
                     </ul>
                     <?php if(isset($_SESSION['type'])&&($_SESSION['type']=="PT"||$_SESSION['type']=="FT")){echo "<ul>";}else{echo "<ul hidden>";}; ?>
-                        <li class="text-info">Sex: </li>
+                        <li class="text-info">Work Type: </li>
                         <li><input type="radio" name="work_type" id="work_type" value="FT">Full Time &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="work_type" id="work_type" value="PT">Part Time</li>
                     </ul>
 
                     <?php if(isset($_SESSION['type'])&&($_SESSION['type']=="sup"||$_SESSION['type']=="nor")){echo "<ul hidden>";}else{echo "<ul>";}; ?>
                         <li class="text-info">Mobile Number:</li>
-                        <li><input type="text" id="phone" value="62742899"></li>
+                        <li><input type="text" id="phone"></li>
                     </ul>
 					<ul>
                         <li class="text-info">Email: </li>
-                        <li><input type="text" id="email" value="isistang1234@gmail.com"></li>
+                        <li><input type="text" id="email"></li>
 					</ul>
                     <ul>
                         <li class="text-info">Password: </li>
