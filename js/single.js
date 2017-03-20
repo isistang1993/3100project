@@ -39,6 +39,7 @@ $(window).load(function() {
     //xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send();
     //console.log("PHP/search_shoes.php?"+shoes_id+"&"+sex+"&"+task);
+    
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState === 4 && xmlhttp.status==200){
             console.log(xmlhttp.responseText);
@@ -49,17 +50,18 @@ $(window).load(function() {
             $sex = response[0]["sex"];
             $category = response[0]["category"];
             $price = response[0]["price"];
+            $product_detail = response[0]["p_details"];
+            $highlights = response[0]["highlights"];
+            $desc = response[0]["desc"];
+            $messages = response[0]["terms"];
 
             $("#shoes_name").text($shoes_name);
             $("#sex_and_category").text($sex+"'s " + $category + " shoes");
             $("#price").text("$ "+$price);
-            //$("#f_name").val(response[0]["f_name"]);
-            //$("#l_name").val(response[0]["l_name"]);
-            //$('input:radio[name=sex]').filter('[value='+  response[0]["sex"] +']').prop('checked', true);
-            //$("#phone").val(response[0]["phone"]);
-            //$("#email").val(response[0]["email"]);
-            //$('input:radio[name=job_type]').filter('[value='+  response[0]["type"] +']').prop('checked', true);
-            //$('input:radio[name=work_type]').filter('[value='+  response[0]["work_type"] +']').prop('checked', true);
+            $("#prod_detail").text($product_detail);
+            $("#highlights").text($highlights);
+            $("#desc").text($desc);
+            $("#messages").text($messages);
         }
     };
 
