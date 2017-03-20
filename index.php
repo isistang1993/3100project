@@ -11,7 +11,7 @@ session_start();
         <meta charset utf="8">
         <meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 
-        <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+        <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
         </script>
 
         <!--fonts-->
@@ -42,15 +42,15 @@ session_start();
                         <a href="index.html">114SHOES</a>
                     </div>
                     <div class="login-bars">
-                        <?php 
+                        <?php
                             if(isset($_SESSION['type'])){
                                 switch($_SESSION['type']){
                                     case "nor":
                                     case "sup":
-                                    echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> "; 
+                                    echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
                                 }
                                 echo "<a class='btn btn-default log-bar' href='view_profile.php' role='button'>$_SESSION[username]</a> ";
-                                echo "<a class='btn btn-default log-bar' id='logout' role='button'>Logout</a>";
+                                echo "<a class='btn btn-default log-bar' id='logout' href='logout.php'role='button'>Logout</a>";
                             }else{
                                 echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
                                 echo "<a class='btn btn-default log-bar' href='signup.html' role='button'>Login</a>";
