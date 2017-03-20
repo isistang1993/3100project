@@ -56,15 +56,15 @@ session_start();
                         <a href="index.html">114SHOES</a>
                     </div>
                     <div class="login-bars">
-                        <?php 
+                        <?php
                             if(isset($_SESSION['type'])){
                                 switch($_SESSION['type']){
                                     case "nor":
                                     case "sup":
-                                    echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> "; 
+                                    echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
                                 }
                                 echo "<a class='btn btn-default log-bar' href='view_profile.php' role='button'>$_SESSION[username]</a> ";
-                                echo "<a class='btn btn-default log-bar' id='logout' role='button'>Logout</a>";
+                                echo "<a class='btn btn-default log-bar' id='logout' href='logout.php' role='button'>Logout</a>";
                             }else{
                                 echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
                                 echo "<a class='btn btn-default log-bar' href='signup.html' role='button'>Login</a>";
@@ -268,7 +268,7 @@ session_start();
                             <li class="ad-2-crt simpleCart_shelfItem">
                                 <a class="btn item_add" href="#" role="button">Add To Cart</a>
                                 <a class="btn" href="#" role="button">Buy Now</a>
-                                
+
                             </li>
                             <li class="ad-2-crt simpleCart_shelfItem">
                                 <a class="btn" href="#" role="button">Catch</a>

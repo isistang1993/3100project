@@ -55,15 +55,15 @@ session_start();
                         <a href="index.html">114SHOES</a>
                     </div>
                     <div class="login-bars">
-                        <?php 
+                        <?php
                             if(isset($_SESSION['type'])){
                                 switch($_SESSION['type']){
                                     case "nor":
                                     case "sup":
-                                    echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> "; 
+                                    echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
                                 }
                                 echo "<a class='btn btn-default log-bar' href='view_profile.php' role='button'>$_SESSION[username]</a> ";
-                                echo "<a class='btn btn-default log-bar' id='logout' role='button'>Logout</a>";
+                                echo "<a class='btn btn-default log-bar' id='logout' href='logout.php' role='button'>Logout</a>";
                             }else{
                                 echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
                                 echo "<a class='btn btn-default log-bar' href='signup.html' role='button'>Login</a>";
@@ -209,11 +209,11 @@ session_start();
                         <li class="text-info">Re-enter Password:</li>
                         <li><input type="password" id="re_password"></li>
                     </ul>
-                    <?php 
+                    <?php
                         if(isset($_SESSION['type'])&&($_SESSION['type']=="sup"||$_SESSION['type']=="nor")){echo "<ul>";}else{echo "<ul hidden>";};
                     ?>
                         <li class="text-info">Type: </li>
-                        <li><input type="radio" class="job_type" name="job_type" id ="job_type" value="U" checked>User &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="job_type" name="job_type" id="job_type" value="PT">Driver-Part Time &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="job_type" class="job_type" name="job_type" value="FT">Driver-Full Time &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="job_type" class="job_type" name="job_type" value="nor">Officer-NOR &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="job_type" class="job_type" name="job_type" value="sup">Officer-SUP</li>                
+                        <li><input type="radio" class="job_type" name="job_type" id ="job_type" value="U" checked>User &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="job_type" name="job_type" id="job_type" value="PT">Driver-Part Time &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="job_type" class="job_type" name="job_type" value="FT">Driver-Full Time &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="job_type" class="job_type" name="job_type" value="nor">Officer-NOR &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="job_type" class="job_type" name="job_type" value="sup">Officer-SUP</li>
                     </ul>
                     <ul>
 						<li class="text-info">First Name: </li>

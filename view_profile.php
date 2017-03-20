@@ -17,7 +17,7 @@ session_start();
         <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
         <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
 
-		
+
         <!--default-js-->
         <script src="js/jquery-2.1.4.min.js"></script>
         <!--fonts-->
@@ -27,7 +27,7 @@ session_start();
         <!--coustom css-->
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
         <!--shop-kart-js-->
-        <script src="js/simpleCart.min.js"></script>    
+        <script src="js/simpleCart.min.js"></script>
         <!--bootstrap-js-->
         <script src="js/bootstrap.min.js"></script>
         <!--script-->
@@ -48,16 +48,16 @@ session_start();
                         <a href="index.html">114SHOES</a>
                     </div>
                     <div class="login-bars">
-                        <?php 
+                        <?php
                             if(isset($_SESSION['type'])){
                                 switch($_SESSION['type']){
                                     case "nor":
                                     case "sup":
-                                    echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> "; 
+                                    echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
                                     break;
                                 }
                                 echo "<a class='btn btn-default log-bar' href='view_profile.php' role='button'>$_SESSION[username]</a> ";
-                                echo "<a class='btn btn-default log-bar' id='logout' role='button'>Logout</a>";
+                                echo "<a class='btn btn-default log-bar' id='logout' href='logout.php' role='button'>Logout</a>";
                             }else{
                                 echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
                                 echo "<a class='btn btn-default log-bar' href='signup.html' role='button'>Login</a>";
