@@ -25,7 +25,7 @@ $(window).ready(function(){
     		}
         if(valid_data){
             var xmlhttp = new XMLHttpRequest();
-            var str ="task=verify" + "&" +
+            var str ="task=verify" + "&";
                 str+="username=" + $("#username").val() +"&";
                 str+= "password=" + $("#password").val();
             console.log(str);
@@ -36,7 +36,10 @@ $(window).ready(function(){
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState === 4 && xmlhttp.status==200){
                   if(xmlhttp.responseText == "Verified"){
+                      $.update_session();
                       console.log("Account verified");
+                      document.location.replace("index.php");
+                      window.location.replace("index.php");
                   }else{
                       alert("User does not exist or wrong password.");
                   }
@@ -45,3 +48,20 @@ $(window).ready(function(){
         }
     });
 });
+
+$.update_session = function(){
+  var xmlhttp = new XMLHttpRequest();
+  var str ="task=session" + "&";
+      str+="username=" + $("#username").val() +"&";
+      str+= "password=" + $("#password").val();
+
+  xmlhttp.open("POST", "PHP/update_user.php", true);
+  xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+  xmlhttp.send(str);
+  xmlhttp.onreadystatechange = function() {
+      if(xmlhttp.readyState === 4 && xmlhttp.status==200){
+          console.log(xmlhttp.responseText);
+      }
+  };
+
+}
