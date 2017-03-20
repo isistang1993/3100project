@@ -15,10 +15,12 @@ if($_GET['task']=="single"){
 
 	$result = $db_con->query($SQL) or die("Error");
 	$row = $result->fetch_assoc();
+
+	$shoes_name = html_entity_decode(htmlentities($row['shoes_name']));
+	
 	do{
 		$rows[] = $row;
 	}while ($row = $result->fetch_assoc());
-	
 	echo json_encode($rows);
 }
 

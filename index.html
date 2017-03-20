@@ -3,47 +3,27 @@
 <html lang="en">
     <head>
     <title> 114SHOES | CSCI3100 Group 16 </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-        <meta charset utf="8">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
-        <!--fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<!--script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script-->
+		<meta charset utf="8">
+		<!--fonts-->
+		<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 
-        <!--fonts-->
-        <!--bootstrap-->
-             <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <!--coustom css-->
-            <link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<!--fonts-->
+		<!--bootstrap-->
+			 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!--coustom css-->
+			<link href="css/style.css" rel="stylesheet" type="text/css"/>
         <!--shop-kart-js-->
         <script src="js/simpleCart.min.js"></script>
-        <!--default-js-->
-            <script src="js/jquery-2.1.4.min.js"></script>
-        <!--bootstrap-js-->
-            <script src="js/bootstrap.min.js"></script>
-        <!--script-->
-
-        <script type="application/x-javascript"> 
-            addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-            $(document).load(function() {
-
-                document.location.replace("index.php");
-                window.location.replace("index.php");
-            });
-            $(window).load(function() {
-                //load web icon
-                $('head').append('<link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">" />');
-                $('head').append('<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">" />');
-                $('head').append('<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">" />');
-
-                document.location.replace("index.php");
-                window.location.replace("index.php");
-            });
-        </script>
-
+		<!--default-js-->
+			<script src="js/jquery-2.1.4.min.js"></script>
+		<!--bootstrap-js-->
+			<script src="js/bootstrap.min.js"></script>
+		<!--script-->
+        <script src="js/index.js"></script>
     </head>
     <body>
         <div class="header">
@@ -54,9 +34,8 @@
                     </div>
                     <div class="login-bars">
                         <a class="btn btn-default log-bar" href="register.php" role="button">Sign up</a>
-                        <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
+                        <a class="btn btn-default log-bar" href="signup.php" role="button">Login</a>
                         <div class="cart box_1">
-                                                <div class="clearfix"></div>
                             <a href="checkout.html">
                             <h3>
                                 <div class="total">
@@ -81,14 +60,6 @@
                             </button>
                         </div>
                         <div class="clearfix"></div>
-                                                <div class="sub-news">
-                                            <div class="container">
-                                                <form>
-                                                <input type="text" class="sub-email" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Item ...';}">
-                                                <a class="btn btn-default subs-btn" href="#" role="button">Search</a>
-                                                </form>
-                                            </div>
-                                        </div>
                         <!--/.navbar-header-->
 
                         <div class="collapse navbar-collapse collapse-pdng" id="bs-example-navbar-collapse-1">
@@ -96,13 +67,16 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="products.html">Shoes</a></li>
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Tops</a></li>
+                                        <li><a href="products.html">Running</a></li>
+                                        <li><a href="products.html">Training</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Tracks</a></li>
+                                        <li><a href="products.html">Basketball</a></li>
+                                        <li><a href="products.html">Football</a></li>
+                                        <li><a href="products.html">Soccer</a></li>
+                                        <li><a href="products.html">Tennis</a></li>
+                                        <li><a href="products.html">Skateboarding</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Gear</a></li>
+                                        <li><a href="products.html">Casual</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -111,11 +85,14 @@
                                         <div class="row">
                                             <div class="col-sm-4 menu-img-pad">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Joggers</a></li>
-                                                    <li><a href="products.html">Foot Ball</a></li>
-                                                    <li><a href="products.html">Cricket</a></li>
+                                                    <li><a href="products.html">Running</a></li>
+                                                    <li><a href="products.html">Training</a></li>
                                                     <li class="divider"></li>
+                                                    <li><a href="products.html">Basketball</a></li>
+                                                    <li><a href="products.html">Football</a></li>
+                                                    <li><a href="products.html">Soccer</a></li>
                                                     <li><a href="products.html">Tennis</a></li>
+                                                    <li><a href="products.html">Skateboarding</a></li>
                                                     <li class="divider"></li>
                                                     <li><a href="products.html">Casual</a></li>
                                                 </ul>
@@ -135,13 +112,16 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Tops</a></li>
-                                                    <li><a href="products.html">Bottoms</a></li>
-                                                    <li><a href="products.html">Yoga Pants</a></li>
+                                                    <li><a href="products.html">Running</a></li>
+                                                    <li><a href="products.html">Training</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Sports</a></li>
+                                                    <li><a href="products.html">Basketball</a></li>
+                                                    <li><a href="products.html">Football</a></li>
+                                                    <li><a href="products.html">Soccer</a></li>
+                                                    <li><a href="products.html">Tennis</a></li>
+                                                    <li><a href="products.html">Skateboarding</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Gym</a></li>
+                                                    <li><a href="products.html">Casual</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-sm-6">
@@ -153,13 +133,16 @@
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kids<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Shorts</a></li>
-                                        <li><a href="products.html">Gear</a></li>
+                                        <li><a href="products.html">Running</a></li>
+                                        <li><a href="products.html">Training</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Watches</a></li>
+                                        <li><a href="products.html">Basketball</a></li>
+                                        <li><a href="products.html">Football</a></li>
+                                        <li><a href="products.html">Soccer</a></li>
+                                        <li><a href="products.html">Tennis</a></li>
+                                        <li><a href="products.html">Skateboarding</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Shoes</a></li>
+                                        <li><a href="products.html">Casual</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">Catch</a></li>
@@ -375,29 +358,30 @@
         <div class="clearfix"></div>
             </div>
         </div>
-
+        <div class="sub-news">
+            <div class="container">
+                <form>
+                    <h3>NewsLetter</h3>
+                <input type="text" class="sub-email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+                <a class="btn btn-default subs-btn" href="#" role="button">SUBSCRIBE</a>
+                </form>
+            </div>
+        </div>
         <div class="footer-grid">
             <div class="container">
                 <div class="col-md-2 re-ft-grd">
                     <h3>Categories</h3>
                     <ul class="categories">
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Kids</a></li>
-                        <li><a href="#">Formal</a></li>
-                        <li><a href="#">Casuals</a></li>
-                        <li><a href="#">Sports</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="products.html">Men</a></li>
+                        <li><a href="products.html">Women</a></li>
+                        <li><a href="products.html">Kids</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 re-ft-grd">
                     <h3>Short links</h3>
                     <ul class="shot-links">
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Delivery</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">Terms & conditions</a></li>
-                        <li><a href="contact.html">Sitemap</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 re-ft-grd">

@@ -60,7 +60,7 @@ session_start();
                                 echo "<a class='btn btn-default log-bar' id='logout' href='logout.php' role='button'>Logout</a>";
                             }else{
                                 echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
-                                echo "<a class='btn btn-default log-bar' href='signup.html' role='button'>Login</a>";
+                                echo "<a class='btn btn-default log-bar' href='signup.php' role='button'>Login</a>";
                             }
                         ?>
 
@@ -95,13 +95,16 @@ session_start();
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="products.html">Shoes</a></li>
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Tops</a></li>
+                                        <li><a href="products.html">Running</a></li>
+                                        <li><a href="products.html">Training</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Tracks</a></li>
+                                        <li><a href="products.html">Basketball</a></li>
+                                        <li><a href="products.html">Football</a></li>
+                                        <li><a href="products.html">Soccer</a></li>
+                                        <li><a href="products.html">Tennis</a></li>
+                                        <li><a href="products.html">Skateboarding</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Gear</a></li>
+                                        <li><a href="products.html">Casual</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -110,11 +113,14 @@ session_start();
                                         <div class="row">
                                             <div class="col-sm-4 menu-img-pad">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Joggers</a></li>
-                                                    <li><a href="products.html">Foot Ball</a></li>
-                                                    <li><a href="products.html">Cricket</a></li>
+                                                    <li><a href="products.html">Running</a></li>
+                                                    <li><a href="products.html">Training</a></li>
                                                     <li class="divider"></li>
+                                                    <li><a href="products.html">Basketball</a></li>
+                                                    <li><a href="products.html">Football</a></li>
+                                                    <li><a href="products.html">Soccer</a></li>
                                                     <li><a href="products.html">Tennis</a></li>
+                                                    <li><a href="products.html">Skateboarding</a></li>
                                                     <li class="divider"></li>
                                                     <li><a href="products.html">Casual</a></li>
                                                 </ul>
@@ -134,13 +140,16 @@ session_start();
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Tops</a></li>
-                                                    <li><a href="products.html">Bottoms</a></li>
-                                                    <li><a href="products.html">Yoga Pants</a></li>
+                                                    <li><a href="products.html">Running</a></li>
+                                                    <li><a href="products.html">Training</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Sports</a></li>
+                                                    <li><a href="products.html">Basketball</a></li>
+                                                    <li><a href="products.html">Football</a></li>
+                                                    <li><a href="products.html">Soccer</a></li>
+                                                    <li><a href="products.html">Tennis</a></li>
+                                                    <li><a href="products.html">Skateboarding</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Gym</a></li>
+                                                    <li><a href="products.html">Casual</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-sm-6">
@@ -152,13 +161,16 @@ session_start();
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kids<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Shorts</a></li>
-                                        <li><a href="products.html">Gear</a></li>
+                                        <li><a href="products.html">Running</a></li>
+                                        <li><a href="products.html">Training</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Watches</a></li>
+                                        <li><a href="products.html">Basketball</a></li>
+                                        <li><a href="products.html">Football</a></li>
+                                        <li><a href="products.html">Soccer</a></li>
+                                        <li><a href="products.html">Tennis</a></li>
+                                        <li><a href="products.html">Skateboarding</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Shoes</a></li>
+                                        <li><a href="products.html">Casual</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">Catch</a></li>
@@ -251,23 +263,16 @@ session_start();
                 <div class="col-md-2 re-ft-grd">
                     <h3>Categories</h3>
                     <ul class="categories">
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Kids</a></li>
-                        <li><a href="#">Formal</a></li>
-                        <li><a href="#">Casuals</a></li>
-                        <li><a href="#">Sports</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="products.html">Men</a></li>
+                        <li><a href="products.html">Women</a></li>
+                        <li><a href="products.html">Kids</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 re-ft-grd">
                     <h3>Short links</h3>
                     <ul class="shot-links">
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Delivery</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">Terms & conditions</a></li>
-                        <li><a href="contact.html">Sitemap</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 re-ft-grd">

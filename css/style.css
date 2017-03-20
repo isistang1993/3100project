@@ -721,6 +721,13 @@ h3.you-might{
     color: #100B0B;
     margin:15px 0px;
 }
+.showcase-last h4{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 27px;
+    font-family: 'Pathway Gothic One';
+    color: #100B0B;
+}
 .showcase-last ul{
     list-style-type: none;
 }

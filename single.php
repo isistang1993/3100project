@@ -67,7 +67,7 @@ session_start();
                                 echo "<a class='btn btn-default log-bar' id='logout' href='logout.php' role='button'>Logout</a>";
                             }else{
                                 echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
-                                echo "<a class='btn btn-default log-bar' href='signup.html' role='button'>Login</a>";
+                                echo "<a class='btn btn-default log-bar' href='signup.php' role='button'>Login</a>";
                             }
                         ?>
                         <div class="cart box_1">
@@ -101,13 +101,16 @@ session_start();
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="products.html">Shoes</a></li>
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Tops</a></li>
+                                        <li><a href="products.html">Running</a></li>
+                                        <li><a href="products.html">Training</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Tracks</a></li>
+                                        <li><a href="products.html">Basketball</a></li>
+                                        <li><a href="products.html">Football</a></li>
+                                        <li><a href="products.html">Soccer</a></li>
+                                        <li><a href="products.html">Tennis</a></li>
+                                        <li><a href="products.html">Skateboarding</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Gear</a></li>
+                                        <li><a href="products.html">Casual</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
@@ -116,11 +119,14 @@ session_start();
                                         <div class="row">
                                             <div class="col-sm-4 menu-img-pad">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Joggers</a></li>
-                                                    <li><a href="products.html">Foot Ball</a></li>
-                                                    <li><a href="products.html">Cricket</a></li>
+                                                    <li><a href="products.html">Running</a></li>
+                                                    <li><a href="products.html">Training</a></li>
                                                     <li class="divider"></li>
+                                                    <li><a href="products.html">Basketball</a></li>
+                                                    <li><a href="products.html">Football</a></li>
+                                                    <li><a href="products.html">Soccer</a></li>
                                                     <li><a href="products.html">Tennis</a></li>
+                                                    <li><a href="products.html">Skateboarding</a></li>
                                                     <li class="divider"></li>
                                                     <li><a href="products.html">Casual</a></li>
                                                 </ul>
@@ -140,13 +146,16 @@ session_start();
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <ul class="multi-column-dropdown">
-                                                    <li><a href="products.html">Tops</a></li>
-                                                    <li><a href="products.html">Bottoms</a></li>
-                                                    <li><a href="products.html">Yoga Pants</a></li>
+                                                    <li><a href="products.html">Running</a></li>
+                                                    <li><a href="products.html">Training</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Sports</a></li>
+                                                    <li><a href="products.html">Basketball</a></li>
+                                                    <li><a href="products.html">Football</a></li>
+                                                    <li><a href="products.html">Soccer</a></li>
+                                                    <li><a href="products.html">Tennis</a></li>
+                                                    <li><a href="products.html">Skateboarding</a></li>
                                                     <li class="divider"></li>
-                                                    <li><a href="products.html">Gym</a></li>
+                                                    <li><a href="products.html">Casual</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-sm-6">
@@ -158,13 +167,16 @@ session_start();
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kids<b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="products.html">Tees</a></li>
-                                        <li><a href="products.html">Shorts</a></li>
-                                        <li><a href="products.html">Gear</a></li>
+                                        <li><a href="products.html">Running</a></li>
+                                        <li><a href="products.html">Training</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Watches</a></li>
+                                        <li><a href="products.html">Basketball</a></li>
+                                        <li><a href="products.html">Football</a></li>
+                                        <li><a href="products.html">Soccer</a></li>
+                                        <li><a href="products.html">Tennis</a></li>
+                                        <li><a href="products.html">Skateboarding</a></li>
                                         <li class="divider"></li>
-                                        <li><a href="products.html">Shoes</a></li>
+                                        <li><a href="products.html">Casual</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="contact.html">Catch</a></li>
@@ -188,7 +200,7 @@ session_start();
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Men</a></li>
-                    <li class="active">Shop</li>
+                    <li class="active">SHOP</li>
                 </ol>
             </div>
         </div>
@@ -197,17 +209,17 @@ session_start();
                 <div class="col-md-8 showcase">
                     <div class="flexslider">
                           <ul class="slides">
-                            <li data-thumb="images/show.jpg">
-                                <div class="thumb-image"> <img src="images/show.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                            <li id="img_thumb_1" data-thumb="images/show.jpg">
+                                <div class="thumb-image"> <img id="img_1" src="images/show.jpg" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                            <li data-thumb="images/show1.jpg">
-                                 <div class="thumb-image"> <img src="images/show1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                            <li id="img_thumb_2" data-thumb="images/show1.jpg">
+                                 <div class="thumb-image"> <img id="img_2" src="images/show1.jpg" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                            <li data-thumb="images/show2.jpg">
-                               <div class="thumb-image"> <img src="images/show2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                            <li id="img_thumb_3" data-thumb="images/show2.jpg">
+                               <div class="thumb-image"> <img id="img_3" src="images/show2.jpg" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
-                            <li data-thumb="images/show3.jpg">
-                               <div class="thumb-image"> <img src="images/show3.jpg" data-imagezoom="true" class="img-responsive"> </div>
+                            <li id="img_thumb_4" data-thumb="images/show3.jpg">
+                               <div class="thumb-image"> <img id="img_4" src="images/show3.jpg" data-imagezoom="true" class="img-responsive"> </div>
                             </li>
                           </ul>
                         <div class="clearfix"></div>
@@ -271,7 +283,7 @@ session_start();
 
                             </li>
                             <li class="ad-2-crt simpleCart_shelfItem">
-                                <a class="btn" href="#" role="button">Catch</a>
+                                <a class="btn" href="#" role="button">Contact Us</a>
                             </li>
                         </ul>
                     </div>
@@ -298,7 +310,7 @@ session_start();
                     <ul class="nav nav-pills tab-nike" role="tablist">
                     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Highlights</a></li>
                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Description</a></li>
-                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Terms & conditiona</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Terms & conditions</a></li>
                     </ul>
 
                     <!-- Tab panes -->
@@ -390,23 +402,16 @@ session_start();
                 <div class="col-md-2 re-ft-grd">
                     <h3>Categories</h3>
                     <ul class="categories">
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Kids</a></li>
-                        <li><a href="#">Formal</a></li>
-                        <li><a href="#">Casuals</a></li>
-                        <li><a href="#">Sports</a></li>
+                        <li><a href="products.html">Shop</a></li>
+                        <li><a href="products.html">Men</a></li>
+                        <li><a href="products.html">Women</a></li>
+                        <li><a href="products.html">Kids</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 re-ft-grd">
                     <h3>Short links</h3>
                     <ul class="shot-links">
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Delivery</a></li>
-                        <li><a href="#">Return Policy</a></li>
-                        <li><a href="#">Terms & conditions</a></li>
-                        <li><a href="contact.html">Sitemap</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 re-ft-grd">
