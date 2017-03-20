@@ -225,7 +225,7 @@ session_start();
 					 </ul>
                      <ul>
                         <li class="text-info">Sex: </li>
-                        <li><input type="radio" class="sex" name="sex" id ="sex" value="M">M &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="sex" name="sex" id="sex" value="F">F &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sex" class="sex" name="sex" value="O" checked>Other</li>
+                        <li><input type="radio" class="sex" name="sex" id ="sex" value="M">Men &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" class="sex" name="sex" id="sex" value="F">Women &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sex" class="sex" name="sex" value="K" checked>Kids &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sex" class="sex" name="sex" value="O" checked>Other</li>
                     </ul>
 					<ul>
 						<li class="text-info">Email: </li>

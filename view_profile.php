@@ -206,7 +206,7 @@ session_start();
 					 </ul>
                     <?php if(isset($_SESSION['type'])&&($_SESSION['type']=="U")){echo "<ul>";}else{echo "<ul hidden>";}; ?>
  						<li class="text-info">Sex: </li>
- 						<li><input type="radio" name="sex" id="sex" value="M">M &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" id="sex" value="F">F &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sex" name="sex" value="Other" checked>Other</li>
+ 						<li><input type="radio" name="sex" id="sex" value="M">Men &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sex" id="sex" value="F">Women &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sex" name="sex" value="K">Kids &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" id="sex" name="sex" value="O" checked>Other</li>
  					</ul>
                     <?php if(isset($_SESSION['type'])&&($_SESSION['type']=="sup"||$_SESSION['type']=="nor")){echo "<ul>";}else{echo "<ul hidden>";}; ?>
                         <li class="text-info">Job Type: </li>

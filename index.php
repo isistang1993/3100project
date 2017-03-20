@@ -1,13 +1,6 @@
 <?php
 require_once('../Connections/conn.php');
 session_start();
-if(isset($_SESSION['username']))
-    echo "<b>$_SESSION[username] $_SESSION[type] isset</b>";
-else{
-    $_SESSION['username'] = 'honglo';
-    $_SESSION['type'] = 'FT';
-    echo "<b>empty</b>";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,17 +8,11 @@ else{
     <title> 114SHOES | CSCI3100 Group 16 </title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-        <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
-            $(window).load(function() {
-                
-            });
-
-        </script>
         <meta charset utf="8">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+        <meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
+        <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+        </script>
 
         <!--fonts-->
         <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
@@ -42,6 +29,10 @@ else{
         <!--bootstrap-js-->
             <script src="js/bootstrap.min.js"></script>
         <!--script-->
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">
+
     </head>
     <body>
         <div class="header">
@@ -277,7 +268,7 @@ else{
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.php">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
@@ -297,7 +288,7 @@ else{
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.php">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
@@ -317,7 +308,7 @@ else{
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.php">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
@@ -337,7 +328,7 @@ else{
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.php">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
@@ -357,7 +348,7 @@ else{
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.php">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
@@ -377,7 +368,7 @@ else{
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a href="single.php">Quick view</a>
                     </div>
                 </div>
         <div class="clearfix"></div>
