@@ -25,7 +25,8 @@ $(window).ready(function(){
     		}
         if(valid_data){
             var xmlhttp = new XMLHttpRequest();
-            var str = "username=" + $("#username").val() +"&";
+            var str ="task=verify" + "&" +
+                str+="username=" + $("#username").val() +"&";
                 str+= "password=" + $("#password").val();
             console.log(str);
 
@@ -34,8 +35,11 @@ $(window).ready(function(){
             xmlhttp.send(str);
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState === 4 && xmlhttp.status==200){
-                    console.log(xmlhttp.responseText);
-                    alert("Login Successed");
+                  if(xmlhttp.responseText == "Verified"){
+                      console.log("Account verified");
+                  }else{
+                      alert("User does not exist or wrong password.");
+                  }
                 }
             };
         }
