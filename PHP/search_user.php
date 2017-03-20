@@ -1,5 +1,5 @@
 <?php
-require_once('../Connections/conn.php'); 
+require_once('../Connections/conn.php');
 session_start();
 
 $SQL = "";
@@ -8,10 +8,10 @@ if($_POST['task']=="profile"){
 	$acc_id = "";
 	$f_name = "";
 	$l_name = "";
-	$sex ="";
+	$sex = "";
 	$phone = "";
 	$email = "";
-	
+
 	$SQL = 	"SELECT acc_id " .
 			"FROM account " .
 			"WHERE username = '$_SESSION[username]'";
@@ -20,19 +20,20 @@ if($_POST['task']=="profile"){
 	$row = $result->fetch_assoc();
 	$acc_id = html_entity_decode(htmlentities($row['acc_id']));
 	$result->free();
-
 	switch($_SESSION['type']){
 		case 'U':
 			$SQL =	"SELECT f_name, l_name, sex, phone, email " .
 					"FROM user_account " .
 					"WHERE acc_id = $acc_id";
 			break;
+		case 'O':
 		case 'nor':
 		case 'sup':
 			$SQL =	"SELECT f_name, l_name, type, email " .
 					"FROM officer_account " .
 					"WHERE acc_id = $acc_id";
 			break;
+		case'D':
 		case 'FT':
 		case 'PT':
 			$SQL =	"SELECT f_name, l_name, work_type, email, phone " .
@@ -40,7 +41,7 @@ if($_POST['task']=="profile"){
 					"WHERE acc_id = $acc_id";
 			break;
 	}
-	
+
 	//echo "$SQL ";
 	$result = $db_con->query($SQL) or die("Error");
 	$row = $result->fetch_assoc();

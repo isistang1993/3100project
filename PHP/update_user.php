@@ -1,6 +1,7 @@
 <?php
 require_once('../Connections/conn.php');
 session_start();
+
 if($_POST['task']=="profile"){
 	//Step1: get acc_od
 	$SQL = 	"SELECT acc_id " .
@@ -67,15 +68,15 @@ if($_POST['task']=="profile"){
 	$_SESSION['type'] = $type;
 }else if($_POST['task']=="session"){
   $SQL = "SELECT type
-	from account
-	where username ='$_POST['username']'
-	and password='$_POST['password']'";
-	$result = $db_con->query($SQL) or die(mysql_error());
+	FROM account
+	WHERE username ='$_POST[username]'
+	AND password='$_POST[password]'";
+	echo $SQL;
+	$result = $db_con->query($SQL) or die("Error");
 	$row = $result->fetch_assoc();
 	$type = html_entity_decode(htmlentities($row['type']));
-
+ echo $type;
 	$_SESSION['username'] = $_POST['username'];
 	$_SESSION['type'] = $type;
-
 }
 ?>

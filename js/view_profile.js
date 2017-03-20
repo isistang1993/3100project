@@ -17,8 +17,8 @@ $(window).load(function() {
     xmlhttp.send(str);
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState === 4 && xmlhttp.status==200){
-            var response = $.parseJSON(xmlhttp.responseText);
             console.log(xmlhttp.responseText);
+            var response = $.parseJSON(xmlhttp.responseText);
             //console.log(response);
             $("#f_name").val(response[0]["f_name"]);
             $("#l_name").val(response[0]["l_name"]);
@@ -89,7 +89,9 @@ $.update_user = function(){
         str+= "job_type=" + $('input[name=job_type]:checked').val() +"&";
         str+= "new_password=" + $('#n_pw').val() +"&";
         str+= "email=" + $("#email").val() +"&";
-        str+= "phone=" + $('#phone').val();
+        str+= "phone=" + $('#phone').val() +"&";
+        str+= "task=profile";
+
     //console.log(str);
 
     xmlhttp.open("POST", "PHP/update_user.php", true);

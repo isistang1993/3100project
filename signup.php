@@ -45,8 +45,20 @@
                         <a href="index.html">114SHOES</a>
                     </div>
                     <div class="login-bars">
-                        <a class="btn btn-default log-bar" href="register.php" role="button">Sign up</a>
-                        <a class="btn btn-default log-bar" href="signup.html" role="button">Login</a>
+                      <?php
+                          if(isset($_SESSION['type'])){
+                              switch($_SESSION['type']){
+                                  case "nor":
+                                  case "sup":
+                                  echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
+                              }
+                              echo "<a class='btn btn-default log-bar' href='view_profile.php' role='button'>$_SESSION[username]</a> ";
+                              echo "<a class='btn btn-default log-bar' id='logout' href='logout.php'role='button'>Logout</a>";
+                          }else{
+                              echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
+                              echo "<a class='btn btn-default log-bar' href='signup.php' role='button'>Login</a>";
+                          }
+                      ?>
                         <div class="cart box_1">
                             <a href="checkout.html">
                             <h3>
