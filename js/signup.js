@@ -49,7 +49,7 @@ $(window).ready(function(){
     });
 });
 
-$.update_user = function(){
+$.update_session = function(){
   var xmlhttp = new XMLHttpRequest();
   var str ="task=session" + "&";
       str+="username=" + $("#username").val() +"&";
