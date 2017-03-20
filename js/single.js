@@ -62,14 +62,16 @@ $(window).load(function() {
             $("#highlights").text($highlights);
             $("#desc").text($desc);
             $("#messages").text($messages);
-            //$("#img_1").attr("src", $shoes_name+"_1.jpg");
-            //$("#img_2").attr("src", $shoes_name+"_2.jpg");
-            //$("#img_3").attr("src", $shoes_name+"_3.jpg");
-            //$("#img_4").attr("src", $shoes_name+"_4.jpg");
-            //$("#img_thumb_1").attr("src", $shoes_name+"_1.jpg");
-            //$("#img_thumb_2").attr("src", $shoes_name+"_2.jpg");
-            //$("#img_thumb_3").attr("src", $shoes_name+"_3.jpg");
-            //$("#img_thumb_4").attr("src", $shoes_name+"_4.jpg");
+            
+            //搞唔_店啊!!!
+            //$("#img_1").attr("src", "images/product/"+$shoes_name+"_1.jpg");
+            //$("#img_2").attr("src", "images/product/"+$shoes_name+"_2.jpg");
+            //$("#img_3").attr("src", "images/product/"+$shoes_name+"_3.jpg");
+            //$("#img_4").attr("src", "images/product/"+$shoes_name+"_4.jpg");
+            //$("#img_thumb_1").attr("data-thumb", "images/product/"+$shoes_name+"_1.jpg");
+            //$("#img_thumb_2").attr("data-thumb", "images/product/"+$shoes_name+"_2.jpg");
+            //$("#img_thumb_3").attr("data-thumb", "images/product/"+$shoes_name+"_3.jpg");
+            //$("#img_thumb_4").attr("data-thumb", "images/product/"+$shoes_name+"_4.jpg");
         }
     };
 

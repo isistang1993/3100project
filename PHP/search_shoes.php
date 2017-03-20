@@ -1,8 +1,8 @@
 <?php
 require_once('../Connections/conn.php'); 
-session_start();
+//session_start();
 
-if($_GET['task']=="single"){
+if((isset($_GET['task']) && $_GET['task']=="single") || $task == "single"){
 	$shoes_id =  $_GET["shoes_id"];
 	$sex =  $_GET["sex"];
 	$SQL =	"SELECT shoes.name as shoes_name, b_name, category, sex.name as sex, price, size, cr_name, p_details, highlights, 'desc', terms " .
@@ -22,6 +22,18 @@ if($_GET['task']=="single"){
 		$rows[] = $row;
 	}while ($row = $result->fetch_assoc());
 	echo json_encode($rows);
+}else if((isset($_GET['task']) && $_GET['task']=="single") || $task == "shoes_name"){
+	$shoes_id =  $_GET["shoes_id"];
+	$sex =  $_GET["sex"];
+	$SQL =	"SELECT shoes.name as shoes_name " .
+			"FROM shoes " . 
+			"WHERE shoes.s_id = $shoes_id ";
+	//echo $SQL;
+
+	$result = $db_con->query($SQL) or die("Error");
+	$row = $result->fetch_assoc();
+
+	$shoes_name = html_entity_decode(htmlentities($row['shoes_name']));
 }
 
 //if($_POST['task']=="profile"){

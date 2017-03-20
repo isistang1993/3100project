@@ -1,6 +1,9 @@
 <?php
 require_once('../Connections/conn.php');
 session_start();
+
+$task = "shoes_name";
+require_once('PHP/search_shoes.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,16 +33,6 @@ session_start();
             <script src="js/imagezoom.js"></script>
               <script defer src="js/jquery.flexslider.js"></script>
             <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-
-            <!--script>
-            // Can also be used with $(document).ready()
-            $(window).load(function() {
-              $('.flexslider').flexslider({
-                animation: "slide",
-                controlNav: "thumbnails"
-              });
-            });
-            </script-->
         <!-- //FlexSlider-->
         <!--by yuyu-->
         <script src="js/single.js"></script>
@@ -209,18 +202,27 @@ session_start();
                 <div class="col-md-8 showcase">
                     <div class="flexslider">
                           <ul class="slides">
-                            <li id="img_thumb_1" data-thumb="images/show.jpg">
-                                <div class="thumb-image"> <img id="img_1" src="images/show.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                            </li>
-                            <li id="img_thumb_2" data-thumb="images/show1.jpg">
-                                 <div class="thumb-image"> <img id="img_2" src="images/show1.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                            </li>
-                            <li id="img_thumb_3" data-thumb="images/show2.jpg">
-                               <div class="thumb-image"> <img id="img_3" src="images/show2.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                            </li>
-                            <li id="img_thumb_4" data-thumb="images/show3.jpg">
-                               <div class="thumb-image"> <img id="img_4" src="images/show3.jpg" data-imagezoom="true" class="img-responsive"> </div>
-                            </li>
+                            <?php 
+                                echo '<li id="img_thumb_1" data-thumb="images/product/' . $shoes_name . '_1.jpg">';
+                                echo '<div class="thumb-image">';
+                                echo '<img id="img_1" src="images/product/' . $shoes_name . '_1.jpg"'. 'data-imagezoom="true" class="img-responsive"> </div>';
+                                echo '</li>';
+
+                                echo '<li id="img_thumb_1" data-thumb="images/product/' . $shoes_name . '_2.jpg">';
+                                echo '<div class="thumb-image">';
+                                echo '<img id="img_1" src="images/product/' . $shoes_name . '_2.jpg"'. 'data-imagezoom="true" class="img-responsive"> </div>';
+                                echo '</li>';
+
+                                echo '<li id="img_thumb_1" data-thumb="images/product/' . $shoes_name . '_3.jpg">';
+                                echo '<div class="thumb-image">';
+                                echo '<img id="img_1" src="images/product/' . $shoes_name . '_3.jpg"'. 'data-imagezoom="true" class="img-responsive"> </div>';
+                                echo '</li>';
+
+                                echo '<li id="img_thumb_1" data-thumb="images/product/' . $shoes_name . '_4.jpg">';
+                                echo '<div class="thumb-image">';
+                                echo '<img id="img_1" src="images/product/' . $shoes_name . '_4.jpg"'. 'data-imagezoom="true" class="img-responsive"> </div>';
+                                echo '</li>';
+                            ?>
                           </ul>
                         <div class="clearfix"></div>
                     </div>
@@ -248,7 +250,13 @@ session_start();
 
 
                     <hr class="featurette-divider">
-                    <div class="shocase-rt-bot">
+                    <?php 
+                        if(isset($_SESSION['username'])){
+                            echo '<div class="shocase-rt-bot">';
+                        }else{
+                            echo '<div class="shocase-rt-bot hidden">';
+                        }
+                    ?>
                         <div class="float-qty-chart">
                         <ul>
                             <li class="qty">
@@ -283,7 +291,22 @@ session_start();
 
                             </li>
                             <li class="ad-2-crt simpleCart_shelfItem">
-                                <a class="btn" href="#" role="button">Contact Us</a>
+                                <?php 
+                                    if(isset($_SESSION['type'])){
+                                        switch($_SESSION['type']){
+                                            case 'U':
+                                            case 'PT':
+                                            case 'FT':
+                                                echo '<a class="btn" href="#" role="button">Contact Us</a>';
+                                                break;
+                                            case 'sup':
+                                            case 'nor':
+                                                echo '<a class="btn" href="single_update.html" role="button">Update Product</a>';
+                                                break;
+                                        }
+                                    }
+                                ?>
+                                
                             </li>
                         </ul>
                     </div>
