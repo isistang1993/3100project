@@ -38,6 +38,8 @@ $(window).ready(function(){
                   if(xmlhttp.responseText == "Verified"){
                       $.update_session();
                       console.log("Account verified");
+                      document.location.replace("index.php");
+                      window.location.replace("index.php");
                   }else{
                       alert("User does not exist or wrong password.");
                   }
