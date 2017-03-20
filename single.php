@@ -216,10 +216,10 @@ session_start();
                 <div class="col-md-4 showcase">
                     <div class="showcase-rt-top">
                         <div class="pull-left shoe-name">
-                            <input type="hidden" id="sheos_id" value=<?php echo"$_GET[shoes_id]"; ?>
-                            <h3>Nike Air Max 2015</h3>
-                            <p>Men's running shoes</p>
-                            <h4>&#36;190</h4>
+                            <h3 id="shoes_name">&lt; SHOES NAME &gt;</h3>
+                            <p id="sex_and_category">&lt; SEX &gt;'s &lt; category &gt; shoes</p>
+                            <h4 id="price">&#36; &lt; price &gt;</h4>
+                            <input type="hidden" id="sheos_id" value=<?php echo"$_GET[shoes_id]"; ?>>
                         </div>
                         <div class="pull-left rating-stars">
                             <ul>
@@ -231,7 +231,7 @@ session_start();
                             </ul>
                         </div>
                         <div class="clearfix"></div>
-                        Reference Link: &nbsp;&nbsp;<input type="text" id="ref_link" style="width: 70%;" />
+                        Link: &nbsp;&nbsp;<input type="text" id="ref_link" style="width: 90%;" />
                     </div>
 
 

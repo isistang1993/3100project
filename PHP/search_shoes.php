@@ -2,9 +2,26 @@
 require_once('../Connections/conn.php'); 
 session_start();
 
-$SQL = "";
-//echo "hi";
-echo "$_GET[shoes_id]";
+if($_GET['task']=="single"){
+	$shoes_id =  $_GET["shoes_id"];
+	$sex =  $_GET["sex"];
+	$SQL =	"SELECT shoes.name as shoes_name, b_name, category, sex.name as sex, price, size, cr_name, p_details, highlights, 'desc', terms " .
+			"FROM shoes, brand, colour, sex " . 
+			"WHERE shoes.b_id = brand.b_id " . 
+			"AND shoes.cr_id = colour.cr_id " .
+			"AND shoes.sex = sex.sex " . 
+			"AND shoes.s_id = $shoes_id ";
+	//echo $SQL;
+
+	$result = $db_con->query($SQL) or die("Error");
+	$row = $result->fetch_assoc();
+	do{
+		$rows[] = $row;
+	}while ($row = $result->fetch_assoc());
+	
+	echo json_encode($rows);
+}
+
 //if($_POST['task']=="profile"){
 	//User profile
 	/*$acc_id = "";

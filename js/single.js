@@ -32,15 +32,27 @@ $(window).load(function() {
 	$('#ref_link').val(window.location.href);
 
     var xmlhttp = new XMLHttpRequest();
-    var str = "shoes_id=" + getUrlParameter('shoes_id');;
-    xmlhttp.open("GET", "PHP/search_shoes.php", true);
-    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xmlhttp.send(str);
+    var shoes_id = "shoes_id=" + getUrlParameter('shoes_id');
+    var sex = "sex="+ getUrlParameter('sex');
+    var task = "task=single";
+    xmlhttp.open("GET", "PHP/search_shoes.php?"+shoes_id+"&"+sex+"&"+task, true);
+    //xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send();
+    //console.log("PHP/search_shoes.php?"+shoes_id+"&"+sex+"&"+task);
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState === 4 && xmlhttp.status==200){
             console.log(xmlhttp.responseText);
-            //var response = $.parseJSON(xmlhttp.responseText);
-            //console.log(response);
+            var response = $.parseJSON(xmlhttp.responseText);
+            console.log(response);
+
+            $shoes_name = response[0]["shoes_name"];
+            $sex = response[0]["sex"];
+            $category = response[0]["category"];
+            $price = response[0]["price"];
+
+            $("#shoes_name").text($shoes_name);
+            $("#sex_and_category").text($sex+"'s " + $category + " shoes");
+            $("#price").text("$ "+$price);
             //$("#f_name").val(response[0]["f_name"]);
             //$("#l_name").val(response[0]["l_name"]);
             //$('input:radio[name=sex]').filter('[value='+  response[0]["sex"] +']').prop('checked', true);
