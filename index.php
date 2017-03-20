@@ -53,7 +53,7 @@ session_start();
                                 echo "<a class='btn btn-default log-bar' id='logout' href='logout.php'role='button'>Logout</a>";
                             }else{
                                 echo "<a class='btn btn-default log-bar' href='register.php' role='button'>Sign up</a> ";
-                                echo "<a class='btn btn-default log-bar' href='signup.html' role='button'>Login</a>";
+                                echo "<a class='btn btn-default log-bar' href='signup.php' role='button'>Login</a>";
                             }
                         ?>
                         <div class="cart box_1">
