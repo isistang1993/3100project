@@ -2,7 +2,8 @@
 require_once('../Connections/conn.php'); 
 //session_start();
 
-if((isset($_GET['task']) && $_GET['task']=="single") || $task == "single"){
+
+if((isset($_GET['task']) && $_GET['task']=="single") || (isset($task) && $task == "single")){
 	$shoes_id =  $_GET["shoes_id"];
 	$sex =  $_GET["sex"];
 	$SQL =	"SELECT shoes.name as shoes_name, b_name, category, sex.name as sex, price, size, cr_name, p_details, highlights, 'desc', terms " .
@@ -22,7 +23,8 @@ if((isset($_GET['task']) && $_GET['task']=="single") || $task == "single"){
 		$rows[] = $row;
 	}while ($row = $result->fetch_assoc());
 	echo json_encode($rows);
-}else if((isset($_GET['task']) && $_GET['task']=="single") || $task == "shoes_name"){
+
+}else if((isset($_GET['task']) && $_GET['task']=="shoes_name") || (isset($task) && $task == "shoes_name")){
 	$shoes_id =  $_GET["shoes_id"];
 	$sex =  $_GET["sex"];
 	$SQL =	"SELECT shoes.name as shoes_name " .
@@ -34,53 +36,35 @@ if((isset($_GET['task']) && $_GET['task']=="single") || $task == "single"){
 	$row = $result->fetch_assoc();
 
 	$shoes_name = html_entity_decode(htmlentities($row['shoes_name']));
-}
 
-//if($_POST['task']=="profile"){
-	//User profile
-	/*$acc_id = "";
-	$f_name = "";
-	$l_name = "";
-	$sex ="";
-	$phone = "";
-	$email = "";
-	
-	$SQL = 	"SELECT acc_id " .
-			"FROM account " .
-			"WHERE username = '$_SESSION[username]'";
-	//echo "$SQL";
-	$result = $db_con->query($SQL) or die("Error");
-	$row = $result->fetch_assoc();
-	$acc_id = html_entity_decode(htmlentities($row['acc_id']));
-	$result->free();
-
-	switch($_SESSION['type']){
-		case 'U':
-			$SQL =	"SELECT f_name, l_name, sex, phone, email " .
-					"FROM user_account " .
-					"WHERE acc_id = $acc_id";
-			break;
-		case 'nor':
-		case 'sup':
-			$SQL =	"SELECT f_name, l_name, type, email " .
-					"FROM officer_account " .
-					"WHERE acc_id = $acc_id";
-			break;
-		case 'FT':
-		case 'PT':
-			$SQL =	"SELECT f_name, l_name, work_type, email, phone " .
-					"FROM driver_account " .
-					"WHERE acc_id = $acc_id";
-			break;
+}else if((isset($_GET['task']) && $_GET['task']=="quick_view") || (isset($task) && $task == "quick_view")){
+	if(isset($_GET['sex'])){
+		$sex = $_GET['sex'];
 	}
-	
-	//echo "$SQL ";
+	$SQL =	"SELECT s_id, sex, shoes.name, price, FLOOR(RAND() * 100) + 0 AS random_number " . 
+			"FROM shoes " . 
+			"WHERE 1 = 1 ";
+	//condition
+	if(isset($sex))
+	$SQL.=	"AND sex = '$sex' " ;
+	$SQL.=	"order by random_number";
+	//echo $SQL;
 	$result = $db_con->query($SQL) or die("Error");
 	$row = $result->fetch_assoc();
-	$rows = array();
 	do{
 		$rows[] = $row;
 	}while ($row = $result->fetch_assoc());
-	echo json_encode($rows);*/
-//}
+
+	//show other not related shoes
+	$SQL =	"SELECT s_id, sex, shoes.name, price, FLOOR(RAND() * 100) + 0 AS random_number " . 
+			"FROM shoes " ;
+	$SQL.=	"ORDER BY random_number" ;
+	$result = $db_con->query($SQL) or die("Error");
+	$row = $result->fetch_assoc();
+	do{
+		$rows[] = $row;
+	}while ($row = $result->fetch_assoc());
+	echo json_encode($rows);
+}
 ?>
+
