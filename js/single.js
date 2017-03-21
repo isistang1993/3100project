@@ -29,7 +29,19 @@ $(window).load(function() {
 		controlNav: "thumbnails"
 	});
 
-	$('#ref_link').val(window.location.href);
+    $.view_shoes();
+    $.quick_view();
+
+	//load web icon
+	//$('head').append('<link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">" />');
+	//$('head').append('<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">" />');
+	//$('head').append('<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">" />');
+
+});
+
+
+$.view_shoes = function(){
+    $('#ref_link').val(window.location.href);
 
     var xmlhttp = new XMLHttpRequest();
     var shoes_id = "shoes_id=" + getUrlParameter('shoes_id');
@@ -44,7 +56,7 @@ $(window).load(function() {
         if(xmlhttp.readyState === 4 && xmlhttp.status==200){
             console.log(xmlhttp.responseText);
             var response = $.parseJSON(xmlhttp.responseText);
-            console.log(response);
+            //console.log(response);
 
             $shoes_name = response[0]["shoes_name"];
             $sex = response[0]["sex"];
@@ -64,20 +76,42 @@ $(window).load(function() {
             $("#messages").text($messages);
             
             //搞唔_店啊!!!
-            //$("#img_1").attr("src", "images/product/"+$shoes_name+"_1.jpg");
-            //$("#img_2").attr("src", "images/product/"+$shoes_name+"_2.jpg");
-            //$("#img_3").attr("src", "images/product/"+$shoes_name+"_3.jpg");
-            //$("#img_4").attr("src", "images/product/"+$shoes_name+"_4.jpg");
-            //$("#img_thumb_1").attr("data-thumb", "images/product/"+$shoes_name+"_1.jpg");
-            //$("#img_thumb_2").attr("data-thumb", "images/product/"+$shoes_name+"_2.jpg");
-            //$("#img_thumb_3").attr("data-thumb", "images/product/"+$shoes_name+"_3.jpg");
-            //$("#img_thumb_4").attr("data-thumb", "images/product/"+$shoes_name+"_4.jpg");
+            /*$("#img_1").attr("src", "images/product/"+$shoes_name+"_1.jpg");
+            $("#img_2").attr("src", "images/product/"+$shoes_name+"_2.jpg");
+            $("#img_3").attr("src", "images/product/"+$shoes_name+"_3.jpg");
+            $("#img_4").attr("src", "images/product/"+$shoes_name+"_4.jpg");
+            $("#img_thumb_1").attr("data-thumb", "images/product/"+$shoes_name+"_1.jpg");
+            $("#img_thumb_2").attr("data-thumb", "images/product/"+$shoes_name+"_2.jpg");
+            $("#img_thumb_3").attr("data-thumb", "images/product/"+$shoes_name+"_3.jpg");
+            $("#img_thumb_4").attr("data-thumb", "images/product/"+$shoes_name+"_4.jpg");*/
         }
     };
+}
 
-	//load web icon
-	//$('head').append('<link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">" />');
-	//$('head').append('<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">" />');
-	//$('head').append('<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">" />');
+$.quick_view = function(){
+    var xmlhttp = new XMLHttpRequest();
+    var sex = "sex="+ getUrlParameter('sex');
+    var task = "task=quick_view";
 
-});
+    xmlhttp.open("GET", "PHP/search_shoes.php?"+sex+"&"+task, true);
+    xmlhttp.send();
+    //console.log("PHP/search_shoes.php?"+shoes_id+"&"+sex+"&"+task);
+
+    xmlhttp.onreadystatechange = function() {
+        if(xmlhttp.readyState === 4 && xmlhttp.status==200){
+            console.log(xmlhttp.responseText);            
+            var response = $.parseJSON(xmlhttp.responseText);
+
+            var items_name = ["#quick_view_1", "#quick_view_2", "#quick_view_3"];
+            var items_price = ["#view_price_1", "#view_price_2", "#view_price_3"];
+            var items_link = ["#quick_view_link1", "#quick_view_link2", "#quick_view_link3"];
+
+            for(i=0; i<items_name.length; i++){
+                $(items_name[i]).text(response[i]["name"]);
+                $(items_price[i]).text(response[i]["price"]);
+                $(items_link[i]).attr("href", "single.php?shoes_id="+response[i]["s_id"]+"&sex="+response[i]["sex"]);
+                console.log("single.html?shoes_id="+response[i]["s_id"]+"&sex="+response[i]["sex"]);
+            }
+        }
+    }
+}

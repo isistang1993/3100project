@@ -214,7 +214,7 @@
                                  </div>
 
                              </form>
-                            <a href="#">Forgot Password ?</a>
+                            <a href="reset.php">Forgot Password ?</a>
                     </div>
                     <div class="col-md-6 login-right">
                             <h3>New Registration</h3>
