@@ -11,6 +11,8 @@ $(window).load(function() {
             xmlhttp.onreadystatechange = function() {
                 if(xmlhttp.readyState === 4 && xmlhttp.status==404){
                     console.log(xmlhttp.responseText);
+                }else{
+                	console.log(xmlhttp.responseText);
                 }
             };
 		}

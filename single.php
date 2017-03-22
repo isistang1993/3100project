@@ -12,7 +12,6 @@ require_once('PHP/search_shoes.php');
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="114SHOES Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-		<script type="application/x-javascript"> //addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<meta charset utf="8">
 		<!--fonts-->
 		<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
@@ -248,11 +247,11 @@ require_once('PHP/search_shoes.php');
                         </div>
                         <div class="pull-left rating-stars">
                             <ul>
-    <li><a href="#" class="active"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
-    <li><a href="#" class="active"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
-    <li><a href="#" class="active"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+    <li><a id="star_1"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+    <li><a id="star_2" href="" ><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+    <li><a id="star_3" href="" ><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+    <li><a id="star_4" href=""><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
+    <li><a id="star_5"><span class="glyphicon glyphicon-star star-stn" aria-hidden="true"></span></a></li>
                             </ul>
                         </div>
                         <div class="clearfix"></div>

@@ -31,14 +31,68 @@ $(window).load(function() {
 
     $.view_shoes();
     $.quick_view();
+    $.view_rank();
 
 	//load web icon
 	//$('head').append('<link rel="icon" type="image/png" sizes="32x32" href="images/icon/favicon-32x32.png">" />');
 	//$('head').append('<link rel="icon" type="image/png" sizes="96x96" href="images/icon/favicon-96x96.png">" />');
 	//$('head').append('<link rel="icon" type="image/png" sizes="16x16" href="images/icon/favicon-16x16.png">" />');
 
+    $("#star_1").click(function(){ $.set_rank(1) });
+    $("#star_2").click(function(){ $.set_rank(2) });
+    $("#star_3").click(function(){ $.set_rank(3) });
+    $("#star_4").click(function(){ $.set_rank(4) });
+    $("#star_5").click(function(){ $.set_rank(5) });
+
 });
 
+$.set_rank = function(rank_num){
+    var xmlhttp = new XMLHttpRequest();
+    var rank_num = "rank_num=" + rank_num;
+    var shoes_id = "shoes_id=" + getUrlParameter('shoes_id');
+    var task = "task=rank";
+    var str = rank_num + "&" + task + "&" + shoes_id;
+    console.log(str);
+    xmlhttp.open("POST", "PHP/add_shoes.php", true);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send(str);
+    xmlhttp.onreadystatechange = function() {
+        if(xmlhttp.readyState === 4 && xmlhttp.status==200){
+            if(xmlhttp.responseText=="Added"){
+                console.log(xmlhttp.responseText);
+                alert("submited");
+                $.view_rank();
+            }else{
+                console.log(xmlhttp.responseText);
+                alert("please Login.");
+            }
+        }
+    }
+}
+
+$.view_rank = function(){
+    var xmlhttp = new XMLHttpRequest();
+    var shoes_id = "shoes_id=" + getUrlParameter('shoes_id');
+    var task = "task=rank";
+    xmlhttp.open("GET", "PHP/search_shoes.php?"+shoes_id+"&"+task, true);
+    //xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send();
+    //console.log("PHP/search_shoes.php?"+shoes_id+"&"+sex+"&"+task);
+    xmlhttp.onreadystatechange = function() {
+        if(xmlhttp.readyState === 4 && xmlhttp.status==200){
+            console.log(xmlhttp.responseText);
+            var response = $.parseJSON(xmlhttp.responseText);
+            console.log(response);
+            console.log(response[0]["rank"]+"~");
+            var rank_id = ["temp", "#star_1", "#star_2", "#star_3", "#star_4", "#star_5"];
+            for(i=0; i<=5; i++){
+                if(i!=0 && i<=response[0]["rank"]){
+                    $(rank_id[i]).attr("class", "active");
+                }
+            }
+        }
+    }
+}
 
 $.view_shoes = function(){
     $('#ref_link').val(window.location.href);
@@ -54,7 +108,7 @@ $.view_shoes = function(){
     
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState === 4 && xmlhttp.status==200){
-            console.log(xmlhttp.responseText);
+            //console.log(xmlhttp.responseText);
             var response = $.parseJSON(xmlhttp.responseText);
             //console.log(response);
 
@@ -99,7 +153,7 @@ $.quick_view = function(){
 
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState === 4 && xmlhttp.status==200){
-            console.log(xmlhttp.responseText);            
+            //console.log(xmlhttp.responseText);            
             var response = $.parseJSON(xmlhttp.responseText);
 
             var items_name = ["#quick_view_1", "#quick_view_2", "#quick_view_3"];

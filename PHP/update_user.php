@@ -108,7 +108,11 @@ if(isset($_POST['task']) && $_POST['task']=="profile"){
 			$to = $_POST['email'];
 			$title = "Change password!!!";
 			$message = "password = $new_pw";
-			mail($to, $title, $message);
+			$message = str_replace("\n.", "\n..", $message);
+			$headers = "MIME-Version: 1.0" . "\r\n";
+			$headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
+			$headers .= "From: 114SHOES";
+			mail($to, $title, $message, $headers);
 			break; 
 		}
 	}

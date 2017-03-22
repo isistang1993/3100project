@@ -65,6 +65,21 @@ if((isset($_GET['task']) && $_GET['task']=="single") || (isset($task) && $task =
 		$rows[] = $row;
 	}while ($row = $result->fetch_assoc());
 	echo json_encode($rows);
+
+}else if((isset($_GET['task']) && $_GET['task']=="rank") || (isset($task) && $task == "rank")){
+	$SQL =	"SELECT AVG(COALESCE(rank,3)) as rank " . 
+			"FROM shoes " . 
+			"LEFT JOIN rank " .
+			"	ON shoes.s_id = rank.shoes_id " . 
+			"WHERE shoes.s_id = $_GET[shoes_id]" ;
+	//echo $SQL;
+	$result = $db_con->query($SQL) or die("Error");
+	$row = $result->fetch_assoc();
+	do{
+		$rows[] = $row;
+	}while ($row = $result->fetch_assoc());
+	echo json_encode($rows);
+
 }
 ?>
 
