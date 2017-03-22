@@ -9,6 +9,8 @@
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <!--coustom css-->
 <link href="css/style.css" rel="stylesheet" type="text/css"/>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/reset.js"></script>
 
 </head>
 <body>
@@ -25,7 +27,7 @@
                           <p>You can reset your password here.</p>
                             <div class="panel-body">
                               
-                              <form class="form">
+                              <!--form class="form"-->
                                 <fieldset>
                                   <div class="form-group">
                                     <div class="input-group">
@@ -35,11 +37,12 @@
                                     </div>
                                   </div>
                                   <div class="form-group">
-                                    <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
+                                    <input class="btn btn-lg btn-primary btn-block" value="Send My Password" id="btn_password" type="submit">
                                   </div>
                                 </fieldset>
-                              </form>
-                              
+                              <!--/form-->
+                              back to <a href="index.php">online store</a>
+
                             </div>
                         </div>
                     </div>

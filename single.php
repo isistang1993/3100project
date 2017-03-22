@@ -192,7 +192,18 @@ require_once('PHP/search_shoes.php');
             <div class="container">
                 <ol class="breadcrumb">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Men</a></li>
+                    <li><a href="#">
+                    <?php 
+                        if(isset($_GET['sex'])){
+                            switch($_GET['sex']){
+                                case "M" : echo "MEN"; break;
+                                case "F" : echo "WOMEN"; break;
+                                case "K" : echo "KIDS"; break;
+                                case "O" : echo "OTHERS"; break;
+                            }
+                        }
+                    ?>
+                    </a></li>
                     <li class="active">SHOP</li>
                 </ol>
             </div>
@@ -360,60 +371,60 @@ require_once('PHP/search_shoes.php');
                      <!-- normal -->
                         <div class="ih-item square effect3 bottom_to_top">
                             <div class="bottom-2-top">
-                    <div class="img"><img src="images/grid4.jpg" alt="/" class="img-responsive gri-wid"></div>
+                    <div class="img"><img id="quick_view_img_1" src="images/grid4.jpg" alt="/" class="img-responsive gri-wid"></div>
                             <div class="info">
                                 <div class="pull-left styl-hdn">
-                                    <h3>style 01</h3>
+                                    <h3 id="quick_view_1">style 01</h3>
                                 </div>
                                 <div class="pull-right styl-price">
-                                    <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price">$190</span></a></p>
+                                    <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price" id="view_price_1">$190</span></a></p>
                                 </div>
                                 <div class="clearfix"></div>
                             </div></div>
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a id="quick_view_link1" href="single.html">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
                     <!-- normal -->
                         <div class="ih-item square effect3 bottom_to_top">
                             <div class="bottom-2-top">
-                    <div class="img"><img src="images/grid6.jpg" alt="/" class="img-responsive gri-wid"></div>
+                    <div class="img"><img id="quick_view_img_2" src="images/grid6.jpg" alt="/" class="img-responsive gri-wid"></div>
                             <div class="info">
                                 <div class="pull-left styl-hdn">
-                                    <h3>style 01</h3>
+                                    <h3 id="quick_view_2">style 01</h3>
                                 </div>
                                 <div class="pull-right styl-price">
-    <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price">$190</span></a></p>
+    <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price" id="view_price_2">$190</span></a></p>
                                 </div>
                                 <div class="clearfix"></div>
                             </div></div>
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a id="quick_view_link2" href="single.html">Quick view</a>
                     </div>
                 </div>
                 <div class="col-md-4 grid-stn simpleCart_shelfItem">
                     <!-- normal -->
                         <div class="ih-item square effect3 bottom_to_top">
                             <div class="bottom-2-top">
-                    <div class="img"><img src="images/grid3.jpg" alt="/" class="img-responsive gri-wid"></div>
+                    <div class="img"><img id="quick_view_img_2" src="images/grid3.jpg" alt="/" class="img-responsive gri-wid"></div>
                             <div class="info">
                                 <div class="pull-left styl-hdn">
-                                    <h3>style 01</h3>
+                                    <h3 id="quick_view_3">style 01</h3>
                                 </div>
                                 <div class="pull-right styl-price">
-    <p><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price">$190</span></a></p>
+    <p ><a  href="#" class="item_add"><span class="glyphicon glyphicon-shopping-cart grid-cart" aria-hidden="true"></span> <span class=" item_price" id="view_price_3">$190</span></a></p>
                                 </div>
                                 <div class="clearfix"></div>
                             </div></div>
                         </div>
                     <!-- end normal -->
                     <div class="quick-view">
-                        <a href="single.html">Quick view</a>
+                        <a id="quick_view_link3" href="single.html">Quick view</a>
                     </div>
                 </div>
                 <div class="clearfix"></div>

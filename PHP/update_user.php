@@ -2,7 +2,7 @@
 require_once('../Connections/conn.php');
 session_start();
 
-if($_POST['task']=="profile"){
+if(isset($_POST['task']) && $_POST['task']=="profile"){
 	//Step1: get acc_od
 	$SQL = 	"SELECT acc_id " .
 			"FROM account " .
@@ -66,7 +66,7 @@ if($_POST['task']=="profile"){
 	}
 	$_SESSION['username'] = $username;
 	$_SESSION['type'] = $type;
-}else if($_POST['task']=="session"){
+}else if(isset($_POST['task']) && $_POST['task']=="session"){
   $SQL = "SELECT type
 	FROM account
 	WHERE username ='$_POST[username]'
@@ -78,5 +78,40 @@ if($_POST['task']=="profile"){
  echo $type;
 	$_SESSION['username'] = $_POST['username'];
 	$_SESSION['type'] = $type;
+}else if(isset($_POST['task']) && $_POST['task']=="pw"){
+	//Step1: get random PW
+	$new_pw = "";
+	$seed = str_split('abcdefghijklmnopqrstuvwxyz'
+	                 .'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	                 .'0123456789!@#$%^&*()'); // and any other characters
+	shuffle($seed); // probably optional since array_is randomized; this may be redundant
+	foreach (array_rand($seed, 8) as $k) $new_pw .= $seed[$k];
+
+	//Step2: update pw
+	$table = ["driver_account", "officer_account", "user_account"];
+	for($i=0; $i<sizeof($table); $i++){
+		$SQL =	"SELECT 1 " .
+			"FROM $table[$i] " .
+			"WHERE email = '$_POST[email]'";
+		$result = 	$db_con->query($SQL) or die("Error");
+		$row = $result->fetch_assoc();
+		
+		if(($result->num_rows)!=0){
+			$SQL =	"UPDATE account " . 
+					"INNER JOIN officer_account ON " .
+					"	 account.acc_id = officer_account.acc_id " .
+					"SET account.password = '$new_pw' " .
+					"WHERE officer_account.email = '$_POST[email]'";
+			$db_con->query($SQL) or die("Error");
+
+			//Step3: send email
+			$to = $_POST['email'];
+			$title = "Change password!!!";
+			$message = "password = $new_pw";
+			mail($to, $title, $message);
+			break; 
+		}
+	}
+
 }
 ?>

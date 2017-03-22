@@ -105,12 +105,14 @@ $.quick_view = function(){
             var items_name = ["#quick_view_1", "#quick_view_2", "#quick_view_3"];
             var items_price = ["#view_price_1", "#view_price_2", "#view_price_3"];
             var items_link = ["#quick_view_link1", "#quick_view_link2", "#quick_view_link3"];
+            var items_img = ["#quick_view_img_1", "#quick_view_img_2", "#quick_view_img_3"];
 
             for(i=0; i<items_name.length; i++){
                 $(items_name[i]).text(response[i]["name"]);
                 $(items_price[i]).text(response[i]["price"]);
                 $(items_link[i]).attr("href", "single.php?shoes_id="+response[i]["s_id"]+"&sex="+response[i]["sex"]);
-                console.log("single.html?shoes_id="+response[i]["s_id"]+"&sex="+response[i]["sex"]);
+                $(items_img[i]).attr("src", "images/product/"+response[i]["name"]+"_1.jpg");
+                //console.log("single.html?shoes_id="+response[i]["s_id"]+"&sex="+response[i]["sex"]);
             }
         }
     }

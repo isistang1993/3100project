@@ -1,5 +1,5 @@
 <?php
-require_once('../Connections/conn.php');
+require_once('Connections/conn.php');
 session_start();
 ?>
 <!DOCTYPE html>
